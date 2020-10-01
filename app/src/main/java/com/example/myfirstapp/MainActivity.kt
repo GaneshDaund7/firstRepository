@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun signIn()
     {
+        
+        Toast.makeText(this,"please Enter details to go ahead",Toast.LENGTH_SHORT).show()
         val user = findViewById(R.id.editTextFirstName) as EditText
         val pass = findViewById(R.id.editTextLastName) as EditText
 
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                             Toast.makeText(this, "SignIn Successful", Toast.LENGTH_SHORT).show()
                         }
                         else {
-                            Toast.makeText(this, "Email not verified", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Email is not verified", Toast.LENGTH_SHORT).show()
                             val user = mAuth.getCurrentUser()
                             user?.sendEmailVerification()?.addOnCompleteListener { task ->
                                 if (task.isSuccessful)
@@ -71,6 +73,6 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this,"Sign in failed",Toast.LENGTH_SHORT).show()
                 }
             }
-
+         Toast.makeText(this,"Welcome to my First app",Toast.LENGTH_SHORT).show()
     }
 }
